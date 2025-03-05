@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task_form</title>
+
+    <style>
+        label {
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        input {
+            display: block;
+        }
+    </style>
+
+</head>
+<body>
+    <h1>Add Task</h1>
+    <form action="/task_form/" method="POST">
+        {% csrf_token %}
+        <label for="title">Title: <input type="text" name="title" id="title" required></label>
+        <label for="description">Description: <input type="text" name="description" id="description" required></label>
+        <label for="">Due Date: <input type="date" name="due_date" id="due_date" required></label>
+
+        <button type="submit">Add to list</button>
+    </form>
+</body>
+</html>

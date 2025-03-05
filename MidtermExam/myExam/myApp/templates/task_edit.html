@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Task</title>
+
+    <style>
+        label {
+            display: block;
+            margin-bottom: 20px;
+        }
+
+        input {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit Task</h1>
+    <p>Current due date: <strong>{{task.due_date}}</strong></p>
+    <form action="{% url 'task_edit' task.id %}" method="POST">
+        {% csrf_token %}
+        <label for="title">Title: <input type="text" name="title" id="title" value="{{task.title}}" required></label>
+        <label for="description">Description: <input type="text" name="description" id="description" value="{{task.description}}" required></label>
+        <label for="due_date">New Due Date: <input type="date" name="due_date" id="due_date" required></label>
+
+        <button type="submit">Save Edit</button>
+    </form>
+</body>
+</html>

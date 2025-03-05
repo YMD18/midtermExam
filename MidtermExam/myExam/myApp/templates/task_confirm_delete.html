@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop Up</title>
+</head>
+<body>
+    <div id="popupInner">
+        <br>
+        <h2>Remove {{student.FirstName}} from the list?</h2>
+        <a href="{% url 'task_delete' task.id %}"><button onclick="closePopup" class="yesBtn">Yes</button></a>
+        <button onclick="closePopup()" class="noBtn">No</button>
+    </div>
+</body>
+</html>
